@@ -1,0 +1,19 @@
+GET http://localhost:8899/api/auth/me99
+###
+POST http://localhost:8899/api/auth/register
+###
+POST http://localhost:8899/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+ "identity" : "andy@cc23.th",
+ "password" : "a1234"
+}
+###
+POST http://localhost:8899/api/post HTTP/1.1
+content-type: application/json
+
+{
+   "message": "sample"
+}
+###
