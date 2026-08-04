@@ -19,12 +19,13 @@ POST http://localhost:8899/api/auth/login HTTP/1.1
 content-type: application/json
 
 {
- "identity" : "andy@ggg.mail",
+ "identity" : "bobby@ggg.mail",
  "password" : "123456"
 }
 ###
 POST http://localhost:8899/api/post HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzg1ODMwNzkwLCJleHAiOjE3ODcxMjY3OTB9.iVRIQaUXV7Ayi0tiC7Pd154z2QCPdaavTRCLmshqp6E
 
 {
    "message": "sample"
