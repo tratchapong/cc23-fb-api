@@ -75,5 +75,5 @@ export async function login(req, res, next) {
 }
 
 export function getMe(req, res) {
-  res.send('Get me Controller')
+  res.json({ user : req.user})
 }
