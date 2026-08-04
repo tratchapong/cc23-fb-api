@@ -8,6 +8,7 @@ export async function register(req, res, next) {
   const { identity, firstName, lastName, password, confirmPassword } = req.body
   // validation
   const data = registerSchema.parse(req.body)
+  console.log(data)
 
   // check Identity is email or mobile
   const identityKey = identityKeyUtil(identity)

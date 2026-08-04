@@ -3,6 +3,8 @@ import { z } from "zod";
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const mobileRegex = /^[0-9]{10,15}$/
 
+const identityKey = val => emailRegex.test(val) ? 'email' : 'mobile'
+
 export const registerSchema = z.object({
 	identity: z.string().min(2, "Email or phone-number require")
 		.refine(value => emailRegex.test(value) || mobileRegex.test(value), {
@@ -16,3 +18,9 @@ export const registerSchema = z.object({
 		message: 'confirmPassword must match password',
 		path: ['confirmPassword']
 })
+// .transform( data => ({
+// 	[identityKey(data.identity)] : data.identity,
+// 	firstName : data.firstName,
+// 	lastName : data.lastName,
+// 	password : data.password
+// }))

@@ -1,11 +1,16 @@
+import {z, ZodError} from 'zod'
+
 export default function (err, req, res, next) {
 	// console.log("Have Error!!!\n", err)
 
-	if (err.name === 'ZodError') {
+	if (err instanceof ZodError ) {
+		console.log('Zod Error :', z.flattenError(err))
 		return res.status(400).json({
 			success: false,
+			message : 'Validation Error',
+			errors : z.flattenError(err).fieldErrors
 			// errors: err.issues
-			errors: err.issues.map(err => err.message)
+			// errors: err.issues.map(err => err.message)
 		})
 	}
 
