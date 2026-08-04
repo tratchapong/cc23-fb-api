@@ -1,4 +1,6 @@
-GET http://localhost:8899/api/auth/me99
+GET http://localhost:8899/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzg1ODMxNjkyLCJleHAiOjE3ODcxMjc2OTJ9.HCDV8AuNl01et2KJZELtoPM4Bu2dM8eEsSisdWLdW-o
+
 ###
 
 # Register api
