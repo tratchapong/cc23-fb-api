@@ -1,7 +1,7 @@
 import { z, ZodError } from 'zod'
 
 export default function (err, req, res, next) {
-	// console.log("Have Error!!!\n", err)
+	console.log("Have Error!!!\n", err)
 
 	if (err.name === 'TokenExpiredError') {
 		return res.status(401).json({
