@@ -68,7 +68,7 @@ export async function login(req, res, next) {
   })
   const {password : pw, createdAt, updatedAt, ...userData} = foundUser
   res.json({
-    msg: 'Login Controller',
+    message: 'Login Successful',
     token: token,
     user: userData
   })
