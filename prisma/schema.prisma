@@ -39,7 +39,7 @@ model Post {
   userId    Int
   user      User      @relation(fields: [userId], references: [id])
   comments  Comment[]
-  like      Like[]
+  likes      Like[]
 }
 
 model Comment {
